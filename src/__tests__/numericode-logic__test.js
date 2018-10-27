@@ -5,8 +5,8 @@ describe("Numericode logic - ", () => {
     expect(numericodeLogic.decode("8 5 12 12 15")).toEqual("HELLO");
   });
 
-  xit("can decode a code with numbers that are larger than 27 and divisible by 27 multiple times with no remainder", () => {
-    // will decode 216 3645 12 324 405
+  it("can decode a code with numbers that are larger than 27 and divisible by 27 multiple times with no remainder", () => {
+    expect(numericodeLogic.decode("216 3645 12 324 405")).toEqual("HELLO");
   });
 
   xit("can decode a code with numbers that are larger than 27 and divisible by 27 multiple times with a remainder", () => {
