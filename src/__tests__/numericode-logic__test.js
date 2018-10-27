@@ -20,8 +20,8 @@ describe("Numericode logic - ", () => {
   });
 
   describe("With concrete examples - ", () => {
-    xit("decodes the first example", () => {
-      // will decode 13 27 26 5
+    it("decodes the first example", () => {
+      expect(numericodeLogic.decode("13 27 26 5")).toEqual("MAZE");
     });
 
     xit("decodes the second example", () => {
