@@ -2,7 +2,14 @@ const getCharacter = number => String.fromCharCode(64 + parseInt(number, 10));
 
 const divideBy27 = number => {
   let dividedNumber = number;
-  while (dividedNumber > 27) dividedNumber = dividedNumber / 27;
+  while (dividedNumber > 27) {
+    if (dividedNumber % 27 === 0) {
+      dividedNumber = dividedNumber / 27;
+    } else {
+      dividedNumber = -32;
+      break;
+    }
+  }
   return dividedNumber;
 };
 
