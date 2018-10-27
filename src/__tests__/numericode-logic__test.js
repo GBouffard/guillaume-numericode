@@ -32,8 +32,10 @@ describe("Numericode logic - ", () => {
       ).toEqual("PUSHEENICORN");
     });
 
-    xit("decodes the third example", () => {
-      // will decode 20 486 21 513 19 324 5 21924 540 135 3 8
+    it("decodes the third example", () => {
+      expect(
+        numericodeLogic.decode("20 486 21 513 19 324 5 21924 540 135 3 8")
+      ).toEqual("TRUSSLE TECH");
     });
 
     xit("decodes the fourth example", () => {
