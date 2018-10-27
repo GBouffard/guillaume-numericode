@@ -38,8 +38,10 @@ describe("Numericode logic - ", () => {
       ).toEqual("TRUSSLE TECH");
     });
 
-    xit("decodes the fourth example", () => {
-      // will decode 8 5 324 8748 295245 730 23 405 13122 12 108
+    it("decodes the fourth example", () => {
+      expect(
+        numericodeLogic.decode("8 5 324 8748 295245 730 23 405 13122 12 108")
+      ).toEqual("HELLO WORLD");
     });
   });
 });
