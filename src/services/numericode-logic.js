@@ -16,7 +16,15 @@ const divideBy27 = number => {
 const divideArray = messageArray =>
   messageArray.map(number => (number < 27 ? number : divideBy27(number)));
 
+const checkForError = messageArray => {
+  const isInvalid = messageArray.some(item => isNaN(item));
+  if (isInvalid) {
+    throw new Error("This is not a valid input!");
+  }
+};
+
 const arrayMapper = messageArray => {
+  checkForError(messageArray);
   const dividedArray = divideArray(messageArray);
   return dividedArray.map(number => getCharacter(number));
 };

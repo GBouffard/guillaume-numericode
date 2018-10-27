@@ -13,8 +13,10 @@ describe("Numericode logic - ", () => {
     expect(numericodeLogic.decode("6 15 15 28 2 1 18")).toEqual("FOO BAR");
   });
 
-  xit("knows when an input is wrong and throws an error when this is the case", () => {
-    // will throw
+  it("knows when an input is wrong and throws an error when this is the case", () => {
+    expect(() => numericodeLogic.decode("6 15 15 28 NaN 2 1 18")).toThrowError(
+      "This is not a valid input!"
+    );
   });
 
   describe("With concrete examples - ", () => {
