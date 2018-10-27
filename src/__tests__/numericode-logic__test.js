@@ -1,8 +1,8 @@
 import numericodeLogic from "../services/numericode-logic";
 
 describe("Numericode logic - ", () => {
-  xit("can decode a code with each number inferior to 27", () => {
-    // will decode 8 5 12 12 15
+  it("can decode a code with each number inferior to 27", () => {
+    expect(numericodeLogic.decode("8 5 12 12 15")).toEqual("HELLO");
   });
 
   xit("can decode a code with numbers that are larger than 27 and divisible by 27 multiple times with no remainder", () => {
