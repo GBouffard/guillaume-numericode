@@ -127,3 +127,4 @@ and doing my research to solve, I learnt that String.fromCharCode(32) returns wh
 - that typeof parseInt("whatever", 10) or typeof parseInt("\*@&^?", 10) always returns a typeOf number no matter what so had to go a different route and as a result, learnt about...
 - The very convenient isNaN() function that determines whether a value is NaN or not
 - (not learnt but forgotten and then remembered), that toThrow expects a function as we are not comparing values, which held me a little bit.
+- That Pusheenicorn is actually a thing!
