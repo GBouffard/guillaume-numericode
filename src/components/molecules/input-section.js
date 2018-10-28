@@ -21,7 +21,7 @@ const InputSection = ({ onSubmit, onChange }) => (
 
       <input
         type="submit"
-        value="Decode"
+        value="DECODE"
         className="App__input-section-button"
       />
     </form>

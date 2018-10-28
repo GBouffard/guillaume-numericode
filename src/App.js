@@ -5,6 +5,24 @@ import InputSection from "./components/molecules/input-section";
 import OutputSection from "./components/atoms/output-section";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.saveLastInput = this.saveLastInput.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      input: null,
+      output: null
+    };
+  }
+
+  saveLastInput(event) {
+    this.setState({ input: event.target.value });
+  }
+
+  submitForm(e) {
+    this.setState({ output: decode(this.state.input) });
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,9 +32,12 @@ class App extends Component {
           src="/images/logo.png"
         />
 
-        <InputSection onSubmit={() => {}} onChange={() => {}} />
+        <InputSection
+          onSubmit={this.submitForm}
+          onChange={this.saveLastInput}
+        />
 
-        <OutputSection decodedMessage={decode("8 5 12 12 15")} />
+        <OutputSection decodedMessage={this.state.output} />
       </div>
     );
   }
