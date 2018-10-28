@@ -7,6 +7,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  font-family: monospace;
 }
 
 .App__logo {
@@ -34,7 +35,6 @@
   margin: 0 auto;
   background-color: wheat;
   font-size: 42px;
-  font-family: monospace;
   color: black;
   border: 4px solid black;
   border-radius: 20px;
@@ -46,5 +46,13 @@
 }
 
 .App__output-section {
-  color: yellow;
+  width: 250px;
+  min-height: 50px;
+  margin: 50px auto 0;
+  padding: 25px;
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: salmon;
+  color: darkred;
+  font-size: 20px;
 }
