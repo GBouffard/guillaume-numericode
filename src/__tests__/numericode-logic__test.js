@@ -19,6 +19,10 @@ describe("Numericode decode method - ", () => {
     );
   });
 
+  it("errors when an input is null", () => {
+    expect(() => decode(null)).toThrowError("This is not a valid input!");
+  });
+
   describe("With concrete examples - ", () => {
     it("decodes the first example", () => {
       expect(decode("13 27 26 5")).toEqual("MAZE");
