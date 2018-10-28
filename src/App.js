@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
+import decode from "./services/numericode-logic";
 import InputSection from "./components/molecules/input-section";
+import OutputSection from "./components/atoms/output-section";
 
 class App extends Component {
   render() {
@@ -14,7 +16,7 @@ class App extends Component {
 
         <InputSection onSubmit={() => {}} onChange={() => {}} />
 
-        <div className="App__output">PlaceHolder for the output</div>
+        <OutputSection decodedMessage={decode("8 5 12 12 15")} />
       </div>
     );
   }

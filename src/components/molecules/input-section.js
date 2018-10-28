@@ -7,7 +7,7 @@ const submitWithPreventDefault = (e, onSubmit) => {
 };
 
 const InputSection = ({ onSubmit, onChange }) => (
-  <div>
+  <div className="App__input-section">
     <form
       onSubmit={e => {
         submitWithPreventDefault(e, onSubmit);

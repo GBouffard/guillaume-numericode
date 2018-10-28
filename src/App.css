@@ -15,10 +15,10 @@
   margin: 25px auto 0;
 }
 
-.App__input {
-  color: white;
+.App__input-section {
+  color: blue;
 }
 
-.App__output {
-  color: white;
+.App__output-section {
+  color: yellow;
 }
