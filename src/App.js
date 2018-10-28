@@ -5,9 +5,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>PlaceHolder for Guillaume's numericode</p>
-        </header>
+        <img
+          alt="Guillaume's Numericode logo"
+          className="App__logo"
+          src="/images/logo.png"
+        />
+
+        <div className="App__input">PlaceHolder for the input</div>
+
+        <div className="App__output">PlaceHolder for the output</div>
       </div>
     );
   }
