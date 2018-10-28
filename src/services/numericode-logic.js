@@ -29,11 +29,9 @@ const arrayMapper = messageArray => {
   return dividedArray.map(number => getCharacter(number));
 };
 
-const numericodeLogic = {
-  decode: message => {
-    const messageArray = message.split(" ");
-    return arrayMapper(messageArray).join("");
-  }
+const decode = message => {
+  const messageArray = message.split(" ");
+  return arrayMapper(messageArray).join("");
 };
 
-export default numericodeLogic;
+export default decode;
