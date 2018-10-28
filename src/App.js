@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import InputSection from "./components/molecules/input-section";
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
           src="/images/logo.png"
         />
 
-        <div className="App__input">PlaceHolder for the input</div>
+        <InputSection onSubmit={() => {}} onChange={() => {}} />
 
         <div className="App__output">PlaceHolder for the output</div>
       </div>
