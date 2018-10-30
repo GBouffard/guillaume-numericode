@@ -6,7 +6,7 @@ const submitWithPreventDefault = (e, onSubmit) => {
   onSubmit();
 };
 
-const InputSection = ({ onSubmit, onChange }) => (
+const InputSection = ({ onSubmit, onChange, lastInput }) => (
   <div>
     <form
       className="App__input-section"
@@ -15,9 +15,10 @@ const InputSection = ({ onSubmit, onChange }) => (
       }}
     >
       <input
-        type="password"
+        type="text"
+        value={lastInput}
         onChange={onChange}
-        className="App__input-section-password"
+        className="App__input-section-text"
       />
 
       <input
@@ -33,5 +34,6 @@ export default InputSection;
 
 InputSection.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  lastInput: PropTypes.string
 };

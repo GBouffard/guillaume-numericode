@@ -15,8 +15,16 @@ class App extends Component {
     };
   }
 
+  componentWillMount() {
+    const storedInput = window.sessionStorage.getItem("numericodeInput");
+    if (!!storedInput) {
+      this.setState({ input: storedInput });
+    }
+  }
+
   saveLastInput(event) {
     this.setState({ input: event.target.value });
+    window.sessionStorage.setItem("numericodeInput", event.target.value);
   }
 
   submitForm(e) {
@@ -24,6 +32,8 @@ class App extends Component {
   }
 
   render() {
+    const displayedInput = this.state.input || "";
+
     return (
       <div className="App">
         <img
@@ -35,6 +45,7 @@ class App extends Component {
         <InputSection
           onSubmit={this.submitForm}
           onChange={this.saveLastInput}
+          lastInput={displayedInput}
         />
 
         <OutputSection decodedMessage={this.state.output} />

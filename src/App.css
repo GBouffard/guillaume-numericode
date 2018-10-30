@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 
-.App__input-section-password {
+.App__input-section-text {
   width: 500px;
   margin: 50px auto 20px;
   padding: 15px;

@@ -6,7 +6,7 @@ const OutputSection = ({ decodedMessage }) => {
 };
 
 OutputSection.propTypes = {
-  decodedMessage: PropTypes.string.isRequired
+  decodedMessage: PropTypes.string
 };
 
 export default OutputSection;
