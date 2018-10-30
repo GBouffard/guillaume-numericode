@@ -16,30 +16,23 @@ const divideBy27 = number => {
 const divideArray = messageArray =>
   messageArray.map(number => (number < 27 ? number : divideBy27(number)));
 
-const checkForInputError = messageArray => {
-  const isInvalid = messageArray.some(item => isNaN(item));
-  if (isInvalid) {
-    throw new Error("This is not a valid input!");
-  }
-};
-
 const arrayMapper = messageArray => {
-  checkForInputError(messageArray);
   const dividedArray = divideArray(messageArray);
   return dividedArray.map(number => getCharacter(number));
 };
 
-const checkForMessageTypeError = message => {
-  const isInvalid = typeof message !== "string";
-  if (isInvalid) {
+const decode = message => {
+  const isValid = !!message && message.match(/[^0-9 ]/g) === null;
+  let messageArray;
+
+  try {
+    if (isValid) {
+      messageArray = message.split(" ");
+    }
+    return arrayMapper(messageArray).join("");
+  } catch (error) {
     throw new Error("This is not a valid input!");
   }
-};
-
-const decode = message => {
-  checkForMessageTypeError(message);
-  const messageArray = message.split(" ");
-  return arrayMapper(messageArray).join("");
 };
 
 export default decode;
