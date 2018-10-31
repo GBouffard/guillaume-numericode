@@ -21,18 +21,12 @@ const arrayMapper = messageArray => {
   return dividedArray.map(number => getCharacter(number));
 };
 
-const decode = message => {
-  const isValid = !!message && message.match(/[^0-9 ]/g) === null;
-  let messageArray;
-
-  try {
-    if (isValid) {
-      messageArray = message.split(" ");
-    }
+const logic = {
+  decode: message => {
+    const messageArray = message.split(" ");
     return arrayMapper(messageArray).join("");
-  } catch (error) {
-    throw new Error("This is not a valid input!");
-  }
+  },
+  isValid: message => !!message && message.match(/[^0-9 ]/g) === null
 };
 
-export default decode;
+export default logic;
