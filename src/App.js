@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import "./App.css";
-import decode from "./services/numericode-logic";
+import logic from "./services/numericode-logic";
 import InputSection from "./components/molecules/input-section";
 import OutputSection from "./components/atoms/output-section";
+import ErrorHandler from "./components/atoms/error-handler";
 
 class App extends Component {
   constructor() {
     super();
     this.saveLastInput = this.saveLastInput.bind(this);
     this.submitForm = this.submitForm.bind(this);
+    this.clearError = this.clearError.bind(this);
     this.state = {
       input: null,
-      output: null
+      output: null,
+      hasError: false
     };
   }
 
@@ -27,13 +30,18 @@ class App extends Component {
     window.sessionStorage.setItem("numericodeInput", event.target.value);
   }
 
+  clearError() {
+    this.setState({ hasError: false });
+  }
+
   submitForm(e) {
-    this.setState({ output: decode(this.state.input) });
+    const isValid = logic.isValid(this.state.input);
+    this.setState(
+      isValid ? { output: logic.decode(this.state.input) } : { hasError: true }
+    );
   }
 
   render() {
-    const displayedInput = this.state.input || "";
-
     return (
       <div className="App">
         <img
@@ -45,10 +53,13 @@ class App extends Component {
         <InputSection
           onSubmit={this.submitForm}
           onChange={this.saveLastInput}
-          lastInput={displayedInput}
+          onFocus={this.clearError}
+          lastInput={this.state.input || ""}
         />
 
         <OutputSection decodedMessage={this.state.output} />
+
+        {this.state.hasError && <ErrorHandler />}
       </div>
     );
   }
