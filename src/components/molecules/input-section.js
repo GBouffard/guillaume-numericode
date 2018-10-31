@@ -6,7 +6,7 @@ const submitWithPreventDefault = (e, onSubmit) => {
   onSubmit();
 };
 
-const InputSection = ({ onSubmit, onChange, lastInput }) => (
+const InputSection = ({ onSubmit, onChange, onFocus, lastInput }) => (
   <div>
     <form
       className="App__input-section"
@@ -18,6 +18,7 @@ const InputSection = ({ onSubmit, onChange, lastInput }) => (
         type="text"
         value={lastInput}
         onChange={onChange}
+        onFocus={onFocus}
         className="App__input-section-text"
       />
 
@@ -35,5 +36,6 @@ export default InputSection;
 InputSection.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  onFocus: PropTypes.func,
   lastInput: PropTypes.string
 };
