@@ -1,7 +1,6 @@
 import logic from "../services/numericode-logic";
 
 describe("Numericode logic - ", () => {
-
   describe("isValid - ", () => {
     it("knows when an input is valid", () => {
       expect(logic.isValid("6 15 15 28 2 1 18")).toBe(true);
@@ -41,15 +40,15 @@ describe("Numericode logic - ", () => {
       });
 
       it("decodes the third example", () => {
-        expect(logic.decode("20 486 21 513 19 324 5 21924 540 135 3 8")).toEqual(
-          "TRUSSLE TECH"
-        );
+        expect(
+          logic.decode("20 486 21 513 19 324 5 21924 540 135 3 8")
+        ).toEqual("TRUSSLE TECH");
       });
 
       it("decodes the fourth example", () => {
-        expect(logic.decode("8 5 324 8748 295245 730 23 405 13122 12 108")).toEqual(
-          "HELLO WORLD"
-        );
+        expect(
+          logic.decode("8 5 324 8748 295245 730 23 405 13122 12 108")
+        ).toEqual("HELLO WORLD");
       });
     });
   });
